@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>C++ on flask</title>
+</head>
+<body>
+	<form action="/submit" method="post">
+		<label for="code">Codo of c++:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<label for="output">This is the output.</label><br>
+
+		<textarea readonly id="code" name="code" rows="30" cols="50" style="resize:none" placeholder="//Enter your code here.">#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main()
+{
+  int len;
+  cin >> len;
+ 
+  char * buffer = (char*) malloc(len + 1);
+
+  if (buffer==NULL) exit (1);
+
+  for (int ix = 0; ix < len; ix++)
+    buffer[ix] = rand() % 26 + 'a';
+
+  buffer[len]='\0';
+  cout << "Случайная строка с длиной"<<len<< " : \n" << buffer;
+  free(buffer);
+ 
+  return 0;
+}</textarea>
+		<textarea id="output" readonly name="output" rows="30" cols="50" style="resize:none" placeholder="//Your output here.">{{output}}</textarea><br>
+		
+		<label for="input">Enter your input:</label><br>
+		<textarea required id="input" name="input" rows="5" cols="50" style="resize:none" placeholder="//Your Input here.">{{input}}</textarea>
+		<!-- <input type="checkbox" name="check" id="GFG" 
+                    value="1" {{check}}>Enable input<br>  -->
+		
+		<button type="submit">Run Code</button>
+</form>
+</body>
+</html>
