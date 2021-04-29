@@ -23,7 +23,8 @@ int main()
     buffer[ix] = rand() % 26 + 'a';
 
   buffer[len]='\0';
-  cout << "Случайная строка с длиной"<<len<< " : \n" << buffer;
+  cout << "Random string with length "<<len<< " : \n" << buffer<<endl;
+  cout << "Allocated memory size "<<len+1;
   free(buffer);
  
   return 0;
@@ -31,10 +32,7 @@ int main()
 		<textarea id="output" readonly name="output" rows="30" cols="50" style="resize:none" placeholder="//Your output here.">{{output}}</textarea><br>
 		
 		<label for="input">Enter your input:</label><br>
-		<textarea required id="input" name="input" rows="5" cols="50" style="resize:none" placeholder="//Your Input here.">{{input}}</textarea>
-		<!-- <input type="checkbox" name="check" id="GFG" 
-                    value="1" {{check}}>Enable input<br>  -->
-		
+		<textarea required id="input" name="input" rows="5" cols="50" style="resize:none" placeholder="//Your Input here.">{{input}}</textarea>		
 		<button type="submit">Run Code</button>
 </form>
 </body>

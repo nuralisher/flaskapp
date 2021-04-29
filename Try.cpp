@@ -14,7 +14,8 @@ int main()
     buffer[ix] = rand() % 26 + 'a';
 
   buffer[len]='\0';
-  cout << "Случайная строка с длиной "<<len<< " : \n" << buffer;
+  cout << "Random string with length "<<len<< " : \n" << buffer<<endl;
+  cout << "Allocated memory size "<<len+1;
   free(buffer);
  
   return 0;
